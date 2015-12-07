@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'Listener\\' => array($baseDir . '/src'),
     'Felix\\' => array($baseDir . '/src'),
     'Event\\' => array($baseDir . '/src'),
     'Calendar\\' => array($baseDir . '/src'),

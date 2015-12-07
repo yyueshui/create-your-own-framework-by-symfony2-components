@@ -10,6 +10,6 @@
       "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-      "psr-0": { "Felix\\": "src/", "Calendar\\": "src/", "Event\\": "src/" }
+      "psr-0": { "Felix\\": "src/", "Calendar\\": "src/", "Event\\": "src/", "Listener\\": "src/"}
     }
 }
