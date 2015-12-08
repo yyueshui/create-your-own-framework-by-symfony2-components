@@ -9,8 +9,9 @@
 namespace Listener;
 
 use Event\ResponseEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class ContentLengthListener
+class ContentLengthListener implements  EventSubscriberInterface
 {
     public function onResponse(ResponseEvent $event)
     {
@@ -21,5 +22,10 @@ class ContentLengthListener
         ) {
             $headers->set('Content-Length', strlen($response->getContent()));
         }
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return array('response' => array('onResponse', -255));
     }
 }

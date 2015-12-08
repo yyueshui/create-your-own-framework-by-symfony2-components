@@ -9,8 +9,9 @@
 namespace Listener;
 
 use Event\ResponseEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class GoogleListener
+class GoogleListener implements EventSubscriberInterface
 {
     public function onResponse(ResponseEvent $event)
     {
@@ -24,5 +25,10 @@ class GoogleListener
         }
 
         $response->setContent($response->getContent().'GA CODE');
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return array('response' => 'onResponse');
     }
 }
